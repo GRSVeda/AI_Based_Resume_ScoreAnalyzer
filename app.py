@@ -1,5 +1,5 @@
 import streamlit as st
-import PyPDF2
+import pypdf
 import re
 
 # Page Settings
@@ -18,7 +18,7 @@ st.markdown("Created by **Gadepalli Rajeswari Srikruthi Veda**")
 st.divider()
 
 def get_text(file):
-    reader = PyPDF2.PdfReader(file)
+    reader = pypdf.PdfReader(file)
     return " ".join([p.extract_text() for p in reader.pages]).lower()
 
 # UI Layout
